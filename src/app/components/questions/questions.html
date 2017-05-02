@@ -1,0 +1,66 @@
+<div class="page questions">
+    <div class="header">
+        <h1>
+            Вопросы организаторам
+        </h1>
+    </div>
+
+    <div class="main">
+
+        <div class="popup" *ngIf="showPopUp">
+            <div class="form">
+                <div class="content">
+                    <h4>Представьтесь, пожалуйста</h4>
+
+                    <input class="form-input" type="text" placeholder="Имя" [(ngModel)]="user.firstname">
+
+                    <!--<input class="form-input" type="text" placeholder="Фамилия" [(ngModel)]="user.lastname">-->
+                    <!--<input class="form-input" type="email" placeholder="Email" [(ngModel)]="user.email">-->
+                    <!--<input class="form-input" type="tel" placeholder="Номер телефона" [(ngModel)]="user.phone">-->
+
+                    <!-- <div class="select-container">
+                        <select [(ngModel)]="user.speaker">
+                            <option value="0">Выберите спикера</option>
+                            <option *ngFor="let speaker of speakers" [ngValue]="speaker._id">{{speaker.name.firstname}} {{speaker.name.lastname}}</option>
+                        </select>
+                    </div> -->
+
+                    <div [ngSwitch]="actionBlock">
+                        <button
+                            class="app_button"
+                            type="button"
+                            [disabled]="disableFunc()"
+                            (click)="setUser()"
+                            *ngSwitchCase="'BUTTON'"
+                        >
+                            Готово
+                        </button>
+
+                        <div class="text-center" *ngSwitchCase="'LOADING'">
+                            <img style="height: 50px;" src="./assets/icons/default.svg">
+                        </div>
+
+                        <div class="white" *ngSwitchCase="'ERROR'">
+                            {{error}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="messages" #messagesContainer>
+            <div class="message-item" *ngFor="let m of messages;">
+                <b [ngClass]="{'speaker': (m.sender_info[0].speaker) ? true : false}">{{m.sender_info[0].name.firstname}} {{m.sender_info[0].name.lastname}}</b>
+                <p>
+                    {{m.message}}
+                </p>
+            </div>
+        </div>
+
+        <div class="message_input">
+            <textarea [(ngModel)]="message"></textarea>
+            <button class="app_button" type="button" (click)="sendMessage()" [disabled]="!message || sendDisable">Отправить</button>
+        </div>
+
+    </div>
+</div>

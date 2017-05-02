@@ -1,0 +1,97 @@
+<div class="page schedule">
+    <div class="header">
+        <h1>
+            Мероприятия
+        </h1>
+
+        <!-- <h1 class="desktop-date">
+            <span class="day">{{item.day}}</span> / <span class="date">{{item.date}}</span> <span class="year">{{item.year}}</span>
+        </h1>
+
+        <h1 class="mobile-date">
+            <span class="day">{{item.day}}</span> | <span class="date">{{item.date}}</span>
+        </h1> -->
+    </div>
+
+    <div class="main">
+        <div class="schedule-list">
+            <div class="day-container">
+                <div class="day-item day">
+                    {{item.day}}
+                </div>
+
+                <div class="day-item date">
+                    {{item.date}}
+                </div>
+            </div>
+
+            <div *ngIf="item.separate" class="separate-container">
+                <div class="separate-item">
+                    <h2 class="title">
+                        {{item.event_title[0].main}}
+                    </h2>
+                    <span class="sub-title">{{item.event_title[0].sub}}</span>
+
+                    <div class="schedule-container" *ngFor="let event of item.events[0]">
+                        <div class="schedule-item time">
+                            {{event.time}}
+                        </div>
+
+                        <div class="schedule-item dot">
+                            &#9679;
+                        </div>
+
+                        <div class="schedule-item desk">
+                            {{event.event}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separate-item">
+                    <h2>{{item.event_title[1].main}}</h2>
+                    <div class="schedule-container" *ngFor="let event of item.events[1]">
+                        <div class="schedule-item time">
+                            {{event.time}}
+                        </div>
+
+                        <div class="schedule-item dot">
+                            &#9679;
+                        </div>
+
+                        <div class="schedule-item desk">
+                            {{event.event}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!item.separate">
+                <div class="schedule-container" *ngFor="let event of item.events">
+                    <div class="schedule-item time">
+                        {{event.time}}
+                    </div>
+
+                    <div class="schedule-item dot">
+                        &#9679;
+                    </div>
+
+                    <div class="schedule-item desk">
+                        {{event.event}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <ul>
+            <li class="schedule-item" *ngFor="let item of schedule[index]">
+                <h2 *ngIf="item.title">
+                    <b>{{item.title}}</b>
+                </h2>
+                <span>{{item.time}}</span>
+                <p>
+                    {{item.event}}
+                </p>
+            </li>
+        </ul> -->
+    </div>
+</div>

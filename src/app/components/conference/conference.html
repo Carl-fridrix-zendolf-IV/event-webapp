@@ -1,0 +1,86 @@
+<div class="page conference">
+    <div class="header">
+        <h1>
+            Конференция
+        </h1>
+    </div>
+
+    <div class="main">
+
+        <div class="attention">
+            <h2 class="text-center">
+                Внимание!
+            </h2>
+            <p class="text-center">
+                Для использования функции регистрации необходимо открыть сайт через мобильный девайс.
+            </p>
+        </div>
+
+        <div [ngSwitch]="switchString">
+            <div *ngSwitchCase="'FORM'" class="code-uploader">
+                <p class="text-center">
+                    Чтобы зарегистрироваться на конференцию укажите своё имя, фамилию и сфотографируйте QR-код. Регистрация будет проходить перед конференц-залом 6 апреля.
+                </p>
+
+                <div class="form-group">
+                    <input
+                        type="text"
+                        [(ngModel)]="user.firstname"
+                        [disabled]="loading"
+                        (focus)="inputFieldChange()"
+                        placeholder="Имя"
+                        style="margin-top: 25px;"
+                    >
+
+                    <input
+                        type="text"
+                        [(ngModel)]="user.lastname"
+                        [disabled]="loading"
+                        (focus)="inputFieldChange()"
+                        placeholder="Фамилия"
+                    >
+
+                    <div *ngIf="!loading">
+                        <input type="file" name="file" id="file" class="input-file" (change)="fileUpload($event)" capture accept="image/*">
+                        <label for="file" class="btn btn-tertiary js-labelFile app_button text-center">
+                            <img src="./assets/icons/ic_done_black_36px.svg" *ngIf="file">
+                            <span class="js-fileName" [ngClass]="{'has-file': file}">{{button}}</span>
+                        </label>
+                    </div>
+
+                    <p class="error text-center" *ngIf="error">
+                        {{error}}
+                    </p>
+
+                    <div *ngIf="loading" class="text-center">
+                        <img src="./assets/icons/default_orange.svg" style="height: 50px;">
+                    </div>
+
+                    <img [src]="fakeImage" class="fake-image" id="FAKE_IMG">
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'SUCCESS'">
+                <h2 class="text-center">Успешно!</h2>
+                <p class="text-center">
+                    Вы успешно зарегистрированы на конференцию!
+                </p>
+
+                <div class="text-center success-icon">
+                    <img src="./assets/icons/ic_done_green_36px.svg" >
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'ALREADY_REGISTERED'">
+                <h2 class="text-center">Успешно!</h2>
+                <p class="text-center">
+                    Вы уже успешно зарегистрировались на конференцию!
+                </p>
+
+                <div class="text-center success-icon">
+                    <img src="./assets/icons/ic_done_green_36px.svg" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

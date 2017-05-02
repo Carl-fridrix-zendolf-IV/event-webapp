@@ -1,0 +1,60 @@
+<div class="page media">
+    <div class="header">
+        <h1 [id]="'media-' + page">
+            {{title}}
+        </h1>
+    </div>
+
+    <div class="main">
+        <!--<p class="text-center">-->
+            <!--26 апреля здесь будут выложены фото и видео материалы с мероприятия.-->
+        <!--</p>-->
+
+        <div [ngSwitch]="pageType">
+          <div *ngSwitchCase="'MAIN'">
+            <div class="videoWrapper">
+              <iframe src="https://www.4shared.com/web/embed/file/t1cXMeDfei" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+            </div>
+
+            <p class="text-center" style="margin-bottom: 20px;">
+              Вы можете скачать все фото и видео
+            </p>
+
+            <button
+              class="app_button"
+              onclick="return window.open('http://dropmefiles.com/gyAEv','_blank');"
+            >
+              Скачать архив
+            </button>
+          </div>
+
+          <div *ngSwitchCase="'PHOTOS'">
+              <div class="media-container" *ngIf="showContainer">
+                  <div class="media-item" *ngFor="let item of list; let i = index;" (click)="showImageDetail(i)">
+                      <img [src]="path + (i + 1) + '.jpg'">
+                  </div>
+              </div>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Photo detail overlay -->
+<div class="photo-overlay" *ngIf="showOverlay">
+    <div class="photo-detail-container">
+        <div class="image-clicker text-center left" (click)="clickOnArrow('LEFT')">
+            <img src="./assets/icons/ic_navigate_before_white_48px.svg" [ngStyle]="{'visibility': showLeft()}">
+        </div>
+        <div class="photo text-center">
+            <img class="image" [src]="detailImageSrc">
+
+            <p class="text-center close" style="color: #fff; cursor: pointer;" (click)="close()">
+                закрыть
+            </p>
+        </div>
+        <div class="image-clicker text-center right" (click)="clickOnArrow('RIGHT')">
+            <img src="./assets/icons/ic_navigate_next_white_48px.svg"  [ngStyle]="{'visibility': showRight()}">
+        </div>
+    </div>
+</div>

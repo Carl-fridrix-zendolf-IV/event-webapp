@@ -1,0 +1,168 @@
+@import "../../../../sass/variables";
+
+.questions {
+    .header {
+        z-index: 4;
+        border-bottom: 0 !important;
+    }
+
+    .main {
+        height: 84%;
+        position: relative;
+        padding-bottom: initial !important;
+
+        .popup {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 3;
+
+            background: rgba(255,255,255,0.8);
+
+            .form {
+                margin: 30px;
+                padding: 30px;
+                background: $global-main-color;
+
+                .content {
+                    max-width: 370px;
+                    margin: auto;
+
+                    text-align: center;
+
+                    h4 {
+                        color: #fff;
+                        margin-bottom: 10px;
+                    }
+
+                    .form-input {
+                        display: block;
+
+                        margin: auto;
+                        width: calc(100% - 24px);
+
+                        border: 2px solid #EEE;
+                        background: $global-main-color;
+
+                        color: #FFF;
+                        font-size: 14px;
+
+                        padding: 15px 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    .form-input:focus {
+                        border: 2px solid #EEE;
+                    }
+
+                    ::-webkit-input-placeholder {
+                        color: #FFF;
+                    }
+                    ::-moz-placeholder {
+                        color: #FFF;
+                    }
+                    :-moz-placeholder {
+                        color: #FFF;
+                    }
+                    :-ms-input-placeholder {
+                        color: #FFF;
+                    }
+
+                    .select-container {
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        border-radius: 0px;
+                        overflow: hidden;
+
+                        select {
+                            padding: 15px 10px;
+                            margin-bottom: 10px;
+
+                            width: 100%;
+
+                            border: 2px solid #eee;
+                            border-radius: 0;
+
+                            box-shadow: none;
+
+                            background-color: transparent;
+                            background-image: none;
+
+                            -webkit-appearance: none;
+                               -moz-appearance: none;
+                                    appearance: none;
+
+                            font-size: 14px;
+                            color: rgb(255, 255, 255);
+                        }
+                    }
+                }
+            }
+        }
+
+        .messages {
+            width: 100%;
+            max-height: 65%;
+
+            padding: 15px;
+
+            overflow-y: scroll;
+
+            .message-item {
+                width: 100%;
+                white-space: normal;
+                font-size: 16px;
+
+                margin: 20px 0;
+
+                .speaker {
+                    color: $global-main-color;
+                }
+
+                p {
+                    font-size: 16px;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .message_input {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            height: 25%;
+
+            padding: 30px 30px 0;
+
+            textarea {
+                resize: none;
+
+                border: 2px solid $global-main-color;
+                border-radius: 5px;
+
+                width: 100%;
+                height: 150px;
+                max-height: 50%;
+
+                margin-bottom: 10px;
+
+                display: block;
+
+                font-size: 18px;
+            }
+
+            .app_button {
+                display: block;
+                float: right;
+                width: 30%;
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@import "../../../../sass/variables";
+
+
+.schedule {
+    .header .date {
+        color: $global-main-color;
+
+        .mobile-date {
+            display: none;
+        }
+    }
+
+    .main {
+        .schedule-list {
+            margin-top: 10px;
+
+            .day-container {
+                width: 100%;
+
+                padding: 5px 0;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                border-bottom: 3px solid $global-main-color;
+
+                .day-item {
+                    &.day {
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        font-weight: 100;
+                    }
+                    &.date {
+                        text-transform: lowercase;
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: $global-main-color;
+                    }
+                }
+            }
+
+            .separate-container {
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+
+                .separate-item {
+                    width: 100%;
+                }
+            }
+
+            .schedule-container {
+                display: flex;
+                align-items: center;
+
+                .schedule-item {
+                    padding: 5px 0;
+                    font-size: 14px;
+
+                    .title {
+                        display: inline-block;
+                    }
+                    .sub-title {
+                        display: inline-block;
+                        margin-left: 10px;
+                    }
+
+                    &.time {
+                        width: 13%;
+                    }
+
+                    &.dot {
+                        text-align: center;
+                        color: $global-main-color;
+                        width: 10%;
+                    }
+
+                    &.desk {
+                        white-space: normal;
+                        width: 77%;
+                        padding-right: 30px;
+                    }
+                }
+            }
+        }
+
+        // .schedule-item {
+        //     margin: 30px 0;
+        //
+        //     span {
+        //         display: block;
+        //         color: $global-main-color;
+        //         font-size: 14px;
+        //         margin-bottom: 10px;
+        //     }
+        //
+        //     p {
+        //         font-size: 16px;
+        //         font-weight: 100;
+        //         letter-spacing: 1px;
+        //     }
+        // }
+    }
+}

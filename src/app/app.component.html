@@ -1,0 +1,66 @@
+<div class="container" [ngStyle]="{'overflow': scrollDisable}">
+    <div class="app-header">
+        <div class="app-header_item left"></div>
+        <div class="app-header_item title text-center">
+            <img style="width: 50%;" src="./assets/icons/logo.png">
+        </div>
+        <div class="app-header_item burger" (click)="openMenu()">
+            <img src="./assets/icons/ic_menu_black_48px.svg" alt="">
+        </div>
+    </div>
+
+    <div class="menu menu-desktop" style="overflow-y: scroll;">
+        <div class="menu-content">
+            <div class="logo text-center">
+                <img src="./assets/icons/logo_white.png" alt="">
+            </div>
+            <div class="items">
+                <ul>
+                    <template ngFor let-item [ngForOf]="menuItems" let-i="index">
+                        <li (click)="openPage(item)" [ngClass]="{'selected': item.selected}">
+                            <span class="icon">
+                                <img [src]="item.icon" alt="">
+                            </span>
+                            <span class="text">{{item.text}}</span>
+                        </li>
+
+                        <div *ngIf="item.showChilds">
+                            <div class="child-item" style="padding-top: 5px; padding-bottom: 5px;" *ngFor="let child of item.childs" [ngClass]="{'selected': child.selected}" (click)="openChildPage(child, item)">
+                                {{child.name}}
+                            </div>
+                        </div>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" [ngClass]="{'shadow': showContentShadow}">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="menu menu-mobile" style="max-width: 65%;" [ngClass]="{'open': showMenu, 'close': !showMenu}">
+        <div class="menu-content">
+            <div class="items">
+                <ul>
+                    <template ngFor let-item [ngForOf]="menuItems" let-i="index">
+                        <li (click)="openPage(item)" [ngClass]="{'selected': item.selected}">
+                            <span class="icon">
+                                <img [src]="item.icon" alt="">
+                            </span>
+                            <span class="text">{{item.text}}</span>
+                        </li>
+
+                        <div *ngIf="item.showChilds">
+                            <div class="child-item" style="padding-top: 5px; padding-bottom: 5px;" [ngClass]="{'selected': child.selected}" *ngFor="let child of item.childs" (click)="openChildPage(child, item)">
+                                {{child.name}}
+                            </div>
+                        </div>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="overflow" [ngClass]="{'show': showOverlay, 'hide': !showOverlay}" (click)="hideMenu()"></div>
+</div>

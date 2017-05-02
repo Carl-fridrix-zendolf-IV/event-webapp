@@ -1,0 +1,225 @@
+@import "./variables";
+
+@media (max-width: 980px) {
+    .app-header .app-header_item.title img {
+        display: inline-block !important;
+    }
+
+    .bg_1 {
+        background-size: cover !important;
+        background-position-x: -370px !important;
+        background-position-y: initial !important;
+    }
+
+    .bg_2 {
+        background-size: 200px !important;
+        background-position-x: 50% !important;
+    }
+
+    .container {
+        .app-header {
+            display: flex;
+        }
+
+        .menu-desktop {
+            display: none;
+        }
+
+        .menu-mobile {
+            .menu-content {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .page {
+        .header {
+            // display: block;
+            height: 40px !important;
+            border: 0;
+            background: $global-main-color !important;
+            top: 56px;
+            position: relative;
+            width: 100%;
+
+            h1 {
+                width: 90% !important;
+                color: rgb(255, 255, 255) !important;
+                font-size: 13px !important;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: 0 !important;
+                padding: 12px 0 0 !important;
+            }
+
+            h1.mobile-date {
+                display: block !important;
+            }
+        }
+
+        .main {
+            padding: 0 15px 30px !important;
+            position: relative !important;
+            top: 50px !important;
+        }
+    }
+
+    // Custom
+    .about .main img { width: 50% !important; }
+
+    .schedule .header {
+        .mobile-date {
+            display: block !important;
+        }
+        .desktop-date {
+            display: none;
+        }
+
+        .day {
+            font-weight: bold;
+        }
+
+        .date {
+            color: #fff !important;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Geneva, Arial, sans-serif;
+            font-weight: 100 !important;
+        }
+    }
+
+    .excursion {
+        h2 {
+            color: $global-main-color;
+            text-align: center;
+
+            border-bottom: 2px solid $global-main-color;
+            max-width: 90%;
+            padding: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .excursion-main-text-container {
+            flex-wrap: wrap-reverse !important;
+        }
+
+        .main-image {
+            max-width: 100% !important;
+        }
+
+        .excursions-container {
+            flex-direction: row-reverse;
+            flex-wrap: wrap-reverse;
+
+            .excursion-item {
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-bottom: 10px;
+                .main-image {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .questions .main .popup {
+        margin: 0 !important;
+        width: 100% !important;
+
+        .form {
+            margin: 0 !important;
+        }
+    }
+
+    .conference {
+        .attention {
+            display: none;
+        }
+
+        .code-uploader {
+            display: block !important;
+        }
+    }
+
+    .schedule {
+        .schedule-container {
+            .schedule-item {
+                font-size: 12px;
+
+                &.time {
+                    width: 55% !important;
+                }
+                &.dot {
+                    width: 25% !important;
+                }
+            }
+        }
+
+        .separate-item {
+            .title {
+                display: block !important;
+            }
+
+            .sub-title {
+                display: block !important;
+                margin-left: 0 !important;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .media {
+        #media-0 {
+            position: relative;
+            bottom: 6px;
+            max-width: 90% !important;
+        }
+
+        .media-container {
+            .media-item {
+                width: 48.5% !important;
+            }
+        }
+    }
+
+    .photo-overlay {
+        .photo-detail-container {
+            .photo {
+                min-width: 95%;
+
+                .image {
+                    width: 100% !important;
+                    max-height: initial !important;
+                    max-width: initial !important;
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+
+                    margin: auto;
+                }
+
+                .close {
+                    width: 100%;
+
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+
+            .image-clicker {
+                &.left {
+                    position: relative;
+                    left: 18%;
+                }
+
+                &.right {
+                    position: relative;
+                    right: 22%;
+                }
+            }
+        }
+    }
+}

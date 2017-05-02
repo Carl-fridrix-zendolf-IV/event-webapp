@@ -1,0 +1,81 @@
+@import "../../../../sass/variables";
+
+.conference {
+    .code-uploader {
+        display: none;
+
+        input[type=text] {
+            display: block;
+
+            margin: auto;
+            width: calc(100% - 24px);
+
+            border: 2px solid $global-main-color;
+
+            font-size: 14px;
+
+            padding: 15px 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-tertiary {
+            line-height: 40px;
+            margin: auto;
+            display: block;
+
+            &:hover, &:focus {
+                color: lighten(#555, 20%);
+            }
+        }
+
+        /* input file style */
+
+        .input-file {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+
+            + .js-labelFile {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon:before {
+                    //font-awesome
+                    content: "";
+                }
+
+                &.has-file {
+                    .icon:before {
+                        //font-awesome
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        .fake-image {
+            width: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+        }
+    }
+
+    .success-icon {
+        margin-top: 20px;
+
+        img {
+            height: 70px;
+        }
+    }
+}

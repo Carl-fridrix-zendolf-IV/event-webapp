@@ -1,0 +1,42 @@
+.excursion {
+    .excursion-main-text-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        p {
+            width: 100%;
+        }
+
+        .main-image {
+            width: 100%;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+    }
+
+    .excursions-container {
+        display: flex;
+        width: 100%;
+        margin-top: 15px;
+
+        .excursion-item {
+            overflow: hidden;
+            .text {
+                margin-top: 0;
+            }
+        }
+
+        .excursion-item:nth-child(1) {
+            width: 60%;
+        }
+        .excursion-item:nth-child(2) {
+            margin-left: 30px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.hotel {
+    .main-image {
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .minor-images-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 10px;
+
+        .minor-image {
+            width: 33.333333333333%;
+            max-height: 165px;
+            overflow: hidden;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            margin-right: 7px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    ul {
+        list-style: disc;
+        margin-top: 20px;
+        margin-left: 15px;
+        font-size: 14px;
+    }
+
+    .address {
+        display: flex;
+        align-items: center;
+
+        padding: 10px 0;
+
+        .icon {
+            text-align: center;
+            width: 50px;
+            
+            img {
+                height: 30px;
+            }
+        }
+
+        .text {
+            font-size: 14px;
+        }
+    }
+}

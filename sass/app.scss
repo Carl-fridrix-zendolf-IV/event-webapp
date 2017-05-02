@@ -1,0 +1,155 @@
+// Import globals
+@import "../src/app/app.component";
+@import "./variables";
+@import "./media";
+
+
+// Import components
+@import "../src/app/components/main/main";
+@import "../src/app/components/about/about";
+@import "../src/app/components/schedule/schedule";
+@import "../src/app/components/hotel/hotel";
+@import "../src/app/components/excursion/excursion";
+@import "../src/app/components/places/places";
+@import "../src/app/components/questions/questions";
+@import "../src/app/components/conference/conference";
+@import "../src/app/components/media/media";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    font-family: sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 12px;
+    background: #FFF;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// background styles
+.bg_1 {
+    z-index: -2;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url('../assets/bg/bg_1.jpg');
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position-x: -170px;
+    background-position-y: -120px;
+}
+.bg_2 {
+    z-index: -1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url('../assets/bg/bg_2.png');
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position-x: 62%;
+    background-position-y: center;
+}
+
+// Page styles
+.page {
+    background: #FFF;
+
+    height: 100%;
+    overflow-y: scroll;
+
+    border-right: 1px solid #BDBDBD;
+
+    .header {
+        height: 70px;
+
+        border-bottom: 1px solid #BDBDBD;
+        background: #fff;
+
+        text-align: center;
+
+        h1 {
+            max-width: 65%;
+
+            text-align: center;
+            font-weight: 100;
+            color: $global-headers-color;
+
+            margin: auto;
+            padding: 20px;
+
+            border-bottom: 4px solid $global-main-color;
+        }
+
+        h1.mobile-date {
+            display: none;
+        }
+    }
+
+    .main {
+        padding: 0 30px;
+        padding-bottom: 30px;
+
+        position: relative;
+        top: 30px;
+
+        h2 {
+            font-weight: 200;
+            margin-top: $main-margin-top;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: $main-margin-top;
+            font-size: 14px;
+        }
+    }
+}
+
+.app_button {
+    cursor: pointer;
+
+    width: 100%;
+    height: 50px;
+
+    background: #FFA726;
+    color: #FFF;
+
+    font-size: 14px;
+}
+.app_button:disabled {
+    opacity: .5;
+}
+
+.text-center {
+    text-align: center !important;
+}
+.white {
+    color: #FFF !important;
+}
+.error {
+    color: #F44336 !important;
+}
